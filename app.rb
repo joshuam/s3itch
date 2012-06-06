@@ -14,6 +14,11 @@ class S3itchApp < Sinatra::Base
       end
     end
   end
+
+  get '/' do
+    'Who are you?'
+  end
+
   # When Skitch uploads via WebDAV, it uses
   # the file name as the URL and includes the
   # image in the body.
