@@ -40,6 +40,10 @@ class S3itchApp < Sinatra::Base
     end
   end
 
+  get '/:name' do
+     redirect "http://#{ENV['S3_BUCKET']}/#{params[:name]}", 302
+  end
+
   delete '/:name' do
     file = bucket.files.get(params[:name])
     file.destroy
